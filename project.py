@@ -28,19 +28,18 @@ def add_data():
 
 
 def delete_data():
-    user_input = input("enter the unique ID to be removed: ") 
-    with open("students.csv","r+") as file:
-        lines = csv.reader(file)
-        for line in lines:
-            if line[0] == user_input:
-                lines.remove(line)
-                break
-        
-
-
-
-
-
+    students = get_data()
+    delete_id = input("Enter ID to delete: ")
+    for student in students:
+        if student["ID"] == delete_id:
+            students.remove(student)
+            break
+    
+    with open("students.csv", "w", newline="") as file:
+        fieldnames = ["ID", "Name", "Age", "Gender", "Contact", "Class"]
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(students)
 
 
 
