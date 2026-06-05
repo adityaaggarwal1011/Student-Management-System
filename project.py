@@ -1,7 +1,6 @@
 import csv
 def main():
-    sort_by_age()
-    
+    print("Hello, Welcome to project\n","STUDENT MANAGEMENT SYSTEM")
 
 #Getting the data from csv
 def get_data():
@@ -17,6 +16,7 @@ def get_data():
                             "Class":row["Class"]
     })
     return students
+
 
 #Adding new student to csv
 def add_data():
@@ -78,6 +78,19 @@ def sort_by_age():
         print(student, "\n".strip())
 
 
+#Sort by name
+def sort_by_name():
+    students = get_data()
+    students.sort(key=lambda student: student["Name"])  
+    for student in students:
+        print(student, "\n".strip())
+
+#Sort by class
+def sort_by_class():
+    students = get_data()
+    students.sort(key=lambda student: int(student["Class"]))    
+    for student in students:
+        print(student, "\n".strip())
 
 
 
