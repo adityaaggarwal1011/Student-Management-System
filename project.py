@@ -1,11 +1,6 @@
 import csv
 def main():
-    get_data()
-    add_data()
-
-
-
-
+    delete_data()
 
 
 
@@ -32,15 +27,15 @@ def add_data():
         file.write(new_student)
 
 
-
-
-
-
-
-
-
-
-
+def delete_data():
+    user_input = input("enter the unique ID to be removed: ") 
+    with open("students.csv","r+") as file:
+        lines = csv.reader(file)
+        for line in lines:
+            if line[0] == user_input:
+                lines.remove(line)
+                break
+        
 
 
 
