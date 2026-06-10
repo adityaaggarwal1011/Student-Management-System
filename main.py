@@ -1,6 +1,7 @@
 import csv
 def main():
-    print("Hello, Welcome to project\n","STUDENT MANAGEMENT SYSTEM")
+    print("\nHello, Welcome to project\n","STUDENT MANAGEMENT SYSTEM\n")
+    find_by_id()
 
 #Getting the data from csv
 def get_data():
